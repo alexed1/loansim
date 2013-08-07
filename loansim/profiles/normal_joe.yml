@@ -1,0 +1,16 @@
+config_type: profile
+name: normal_joe
+average_item_price: 1000
+pct_complete_1_payment: 2
+pct_complete_2_payment: 4
+pct_complete_3_payment: 30
+pct_complete_4_payment: 5
+pct_complete_5_payment: 5 
+pct_complete_6_payment: 4
+pct_complete_7_payment: 3 
+pct_complete_8_payment: 3 
+pct_complete_9_payment: 3 
+pct_complete_10_payment: 3 
+pct_complete_11_payment: 3 
+pct_complete_12_payment: 35
+pct_theft: 15 

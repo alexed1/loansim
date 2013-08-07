@@ -1,0 +1,9 @@
+Z:\dev\loansim2\loansim\bin\Debug\loansim2.exe.config
+Z:\dev\loansim2\loansim\obj\Debug\loansim2.exe
+Z:\dev\loansim2\loansim\obj\Debug\loansim2.pdb
+Z:\dev\loansim2\loansim\bin\Debug\loansim2.exe
+Z:\dev\loansim2\loansim\bin\Debug\loansim2.pdb
+Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.Core.dll
+Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.RepresentationModel.dll
+Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.Core.pdb
+Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.RepresentationModel.pdb
