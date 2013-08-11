@@ -19,6 +19,11 @@ namespace LoanSim
     }
 
 
+    //this allows us to create a dictionary where one of the values is a dictionary. Seems messy, but other approaches were problematic.
+    class ProfileDictionary : Dictionary<string, string>
+    {
+    }
+
     class Program
     {
         //$PROFILES = init_profiles;
@@ -31,51 +36,68 @@ namespace LoanSim
         }
 
 
-        public async static void init_profiles()
+
+       
+
+        //loads actor profiles from yaml
+        public  static void init_profiles()
         {
 
-
-            //load all the profiles
-            Dictionary<string, string> profiles = new Dictionary<string, string>();
-
-            // Process the list of files found in the directory. 
+            //The profiles dictionary is a hash where the key is the name of an individual profile, and the value is a dictionary containing that profile's data
+            Dictionary<string, ProfileDictionary> profiles = new Dictionary<string,ProfileDictionary>();
+            
+            //Load the yaml profiles found in the directory. 
             string[] fileEntries = Directory.GetFiles("../../profiles");
             StreamReader input; //= new StreamReader();
             foreach (string fileName in fileEntries)
             {
-                var yaml = new YamlStream();
-                using (input = File.OpenText( fileName))
-                {
-                    yaml.Load(input);
-                }
-                
-                // Examine the stream
-			    var mapping =
-				(YamlMappingNode)yaml.Documents[0].RootNode;
-			    foreach (var entry in mapping.Children)
+
+                //yaml data for an individual profile will be loaded into a dictionary
+                ProfileDictionary profile = new ProfileDictionary();
+
+                //yaml library processes the yaml files
+                var yaml = new YamlStream();        
+                input = File.OpenText( fileName);
+                yaml.Load(input);       
+			    var node = (YamlMappingNode)yaml.Documents[0].RootNode;
+
+                // convert the yaml input into a dictionary object
+			    foreach (var entry in node.Children)
 			    {
-				    Console.WriteLine(((YamlScalarNode)entry.Key));
-                    Console.WriteLine(((YamlScalarNode)entry.Value));
+                    //string foo = ((YamlScalarNode)entry.Key).Value;
+                    profile.Add(((YamlScalarNode)entry.Key).Value,((YamlScalarNode)entry.Value).Value);
+				    
 			    }
 
-			   
-		
+                //     #the validation process has a side effect of returning a composed array of the pay period percentages
+                string[] pay_period_percentages = validate_profile(profile, fileName);
+
+                // this profile will be stored in a dictionary of profiles.
+                // extract the profile's name from the yaml and use it as the key for this profile
+                string profile_key = profile["name"];
+                profiles.Add(profile_key, profile);
+                var i = 0;
+
             }
-
-
-
-
         }
 
+        public static string[] validate_profile(Dictionary<string, string> profile, string fileName) {
+
+            string[] foo = new string[1];
+            
+          Console.WriteLine( "validating profile: "  + profile["name"]);
+
+           
+          return foo;
+
+        }
+        
+          
 
 
+       
 
-        //     #the validation process has a side effect of returning a composed array of the pay period percentages
-        //   pay_period_percentages = validate_profile(profile, item)
 
-        // #extract the name from the yaml and use it as the key for this profile
-        //    main_key = profile['name']
-        //      profiles[main_key] = profile
 
         //  #insert the pay_period percentages array into the profile
         //    profiles[main_key]['pay_period_percentages'] = pay_period_percentages

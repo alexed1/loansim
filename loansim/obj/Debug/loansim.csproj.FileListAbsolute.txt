@@ -7,3 +7,13 @@ Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.Core.dll
 Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.RepresentationModel.dll
 Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.Core.pdb
 Z:\dev\loansim2\loansim\bin\Debug\YamlDotNet.RepresentationModel.pdb
+Z:\dev\loansim\loansim\bin\Debug\loansim2.exe.config
+Z:\dev\loansim\loansim\obj\Debug\loansim2.exe
+Z:\dev\loansim\loansim\obj\Debug\loansim2.pdb
+Z:\dev\loansim\loansim\bin\Debug\loansim2.exe
+Z:\dev\loansim\loansim\bin\Debug\loansim2.pdb
+Z:\dev\loansim\loansim\bin\Debug\YamlDotNet.Core.dll
+Z:\dev\loansim\loansim\bin\Debug\YamlDotNet.RepresentationModel.dll
+Z:\dev\loansim\loansim\bin\Debug\YamlDotNet.Core.pdb
+Z:\dev\loansim\loansim\bin\Debug\YamlDotNet.RepresentationModel.pdb
+Z:\dev\loansim\loansim\obj\Debug\loansim.csprojResolveAssemblyReference.cache
